@@ -1,7 +1,7 @@
 const express=require("express")
 const router =express.Router()
 const bcrypt=require("bcryptjs")
-const userModel=require("./models/userModel.js")
+const userModel=require("../models/userModel.js")
 const {generateToken} = require("../../utils/generateToken")
 const cookieParser=require("cookie-parser")
 
