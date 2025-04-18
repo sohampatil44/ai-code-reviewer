@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" />
+</head>
+<body>
+    <section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Login to your account</h2>
+
+              <form action="/login" method="post">
+
+                <div class="form-outline mb-4">
+                  <input type="email" id="email" class="form-control form-control-lg" name="mail" required />
+                  <label class="form-label" for="email">Your Email</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="password" class="form-control form-control-lg" name="password" required />
+                  <label class="form-label" for="password">Password</label>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div class="form-check">
+                    <input class="form-check-input me-2" type="checkbox" id="remember-me" />
+                    <label class="form-check-label" for="remember-me">Remember me</label>
+                  </div>
+                  <a href="#!" class="text-body"><u>Forgot password?</u></a>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Don't have an account? 
+                  <a href="/register" class="fw-bold text-body"><u>Register here</u></a>
+                </p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+</body>
+</html>

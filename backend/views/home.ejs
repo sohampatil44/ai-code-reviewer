@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👻 Dark Gothic Code Review 👻</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
+        body {
+            font-family: 'Pirata One', cursive;
+            background: linear-gradient(to bottom, #111, #000);
+            overflow: hidden;
+            color: #ddd;
+            margin: 0;
+        }
+
+        .glow {
+            text-shadow: 0 0 8px rgba(200, 200, 255, 0.8), 0 0 15px rgba(200, 200, 255, 0.6);
+        }
+
+        .btn-glow {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(200, 200, 255, 0.7);
+            transform: scale(1.05);
+        }
+
+        .code-input {
+            font-family: monospace;
+        }
+
+        .gothic-title {
+            font-family: 'UnifrakturMaguntia', cursive;
+        }
+
+        #three-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: none; /* Initially hide the overlay */
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        #loading-text {
+            color: white;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <canvas id="three-canvas"></canvas>
+
+    <div class="bg-gray-900 p-8 rounded-lg shadow-lg w-full max-w-lg border border-gray-600 text-white">
+        <h2 class="text-3xl glow text-center mb-4 gothic-title">👻 Submit Your Code for Review 👻</h2>
+
+        <form action="/ai/get-review" method="POST" class="space-y-4" id="code-form">
+            <label for="code" class="block text-gray-300 font-semibold">Enter your code:</label>
+            <textarea name="code" id="code" rows="8"
+                class="code-input w-full p-3 border border-gray-600 bg-black text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+                placeholder="Paste your spooky code here..." required></textarea>
+
+            <button type="submit"
+                class="w-full bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-200 btn-glow">
+                Submit 👻
+            </button>
+        </form>
+    </div>
+
+    <div id="loading-overlay">
+        <p id="loading-text">Reviewing your code...</p>
+    </div>
+
+    <script>
+        const form = document.getElementById('code-form');
+        const overlay = document.getElementById('loading-overlay');
+
+        form.addEventListener('submit', () => {
+            overlay.style.display = 'flex'; // Show the overlay
+        });
+    </script>
+</body>
+</html>

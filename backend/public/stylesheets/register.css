@@ -1,0 +1,14 @@
+.gradient-custom-3 {
+    background: linear-gradient(135deg, rgba(132, 250, 176, 0.7), rgba(143, 211, 244, 0.7));
+}
+
+.gradient-custom-4 {
+    background: linear-gradient(135deg, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+}
+
+.card {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+}

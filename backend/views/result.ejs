@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
+        body {
+            background: linear-gradient(to bottom, #111, #000);
+            color: #ddd;
+            font-family: 'Pirata One', cursive;
+        }
+
+        .gothic-title {
+            font-family: 'UnifrakturMaguntia', cursive;
+        }
+
+        .code-output {
+            font-family: monospace;
+            background-color: #222;
+            border: 1px solid #444;
+            color: #eee;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .submit-another-btn {
+            background-color: #6a1b9a; /* Dark purple */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .submit-another-btn:hover {
+            background-color: #4a148c; /* Darker purple */
+        }
+
+        .glow {
+            text-shadow: 0 0 8px rgba(200, 200, 255, 0.8), 0 0 15px rgba(200, 200, 255, 0.6);
+        }
+
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="bg-gray-900 p-8 rounded-xl shadow-lg w-full max-w-md text-center">
+        <h2 class="text-3xl gothic-title glow mb-4">Code Review Result 👻</h2>
+
+        <div class="code-output">
+            <%= response %>
+        </div>
+
+        <a href="/ai/home" class="mt-6 inline-block submit-another-btn">
+            Submit Another Code 👻
+        </a>
+    </div>
+
+</body>
+</html>
